@@ -7,7 +7,7 @@ class SplashController extends GetxController {
   @override
   void onInit() async {
     super.onInit();
-    await Future.delayed(const Duration(seconds: 5))
+    await Future.delayed(const Duration(seconds: 2))
         .then((value) => Get.offAll(const MainView()));
   }
 

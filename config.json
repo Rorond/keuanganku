@@ -1,7 +1,10 @@
 {
     "modules": [
         "splash",
-        "main"
+        "main",
+        "form",
+        "income",
+        "outcome"
     ],
     "module_directory_name": "module",
     "experimental_mode": false,

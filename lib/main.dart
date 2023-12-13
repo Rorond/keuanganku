@@ -1,14 +1,26 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:keuanganku/module/splash/view/splash_view.dart';
+import 'package:hive/hive.dart';
+import 'package:keuanganku/core.dart';
+import 'package:keuanganku/shared/theme/theme.dart';
+import 'package:keuanganku/shared/theme/theme_dark.dart';
+import 'package:path_provider/path_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  if (!kIsWeb) {
+    var path = await getTemporaryDirectory();
+    Hive.init(path.path);
+  }
+  mainStorage = await Hive.openBox('mainStorage');
 
   runApp(
-    const GetMaterialApp(
+    GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashView(),
+      theme: getDefaultTheme(),
+      darkTheme: getDarkTheme(),
+      home: const SplashView(),
     ),
   );
 }
