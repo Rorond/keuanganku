@@ -14,3 +14,4 @@ export 'package:flutter/material.dart';
 export 'package:google_fonts/google_fonts.dart';
 export 'package:keuanganku/core.dart';
 export 'package:lottie/lottie.dart';
+export 'package:keuanganku/shared/widgets/form/c_textbox.dart';

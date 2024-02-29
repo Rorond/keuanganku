@@ -22,20 +22,20 @@ class MyAppBar extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Hai,',
+                  'Hallo,',
                   style: GoogleFonts.lato(
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
-                    color: Colors.grey.shade700,
+                    color: Colors.black,
                   ),
                   textAlign: TextAlign.start,
                 ),
                 Text(
-                  ' Muhammad Roni',
+                  ' Belanja apa kamu hari ini?',
                   style: GoogleFonts.lato(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
-                    color: Colors.grey.shade700,
+                    color: Colors.black,
                   ),
                   textAlign: TextAlign.start,
                 ),
@@ -46,7 +46,7 @@ class MyAppBar extends StatelessWidget {
               style: GoogleFonts.lato(
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
-                color: Colors.grey.shade700,
+                color: Colors.black.withOpacity(0.7),
               ),
               textAlign: TextAlign.start,
             ),

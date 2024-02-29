@@ -1,4 +1,3 @@
-import 'package:get/get.dart';
 import 'package:keuanganku/core.dart';
 
 class SplashController extends GetxController {
@@ -7,8 +6,8 @@ class SplashController extends GetxController {
   @override
   void onInit() async {
     super.onInit();
-    await Future.delayed(const Duration(seconds: 2))
-        .then((value) => Get.offAll(const MainView()));
+    await Future.delayed(const Duration(seconds: 2));
+    Get.offAll(const MainView());
   }
 
   @override

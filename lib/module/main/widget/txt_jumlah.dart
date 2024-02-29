@@ -1,5 +1,5 @@
 import 'package:keuanganku/core.dart';
-import 'package:keuanganku/shared/widgets/form/c_textbox.dart';
+import 'package:keuanganku/shared/widgets/form/c_number_field.dart';
 
 class TxtJumlah extends StatelessWidget {
   const TxtJumlah({super.key});
@@ -7,8 +7,8 @@ class TxtJumlah extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(MainController());
-    return CTextbox(
-      label: "Jumlah",
+    return CNumberField(
+      label: "Rp",
       controller: controller.jumlahController,
     );
   }

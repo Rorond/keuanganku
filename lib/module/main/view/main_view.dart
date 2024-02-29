@@ -24,17 +24,17 @@ class MainView extends StatelessWidget {
             }
           },
           child: Scaffold(
-              body: SizedBox(
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width,
-                child: const Stack(
-                  children: [
-                    MyAppBar(),
-                    Content(),
-                  ],
-                ),
+            body: SizedBox(
+              height: MediaQuery.of(context).size.height,
+              child: const Stack(
+                children: [
+                  MyAppBar(),
+                  Content(),
+                ],
               ),
-              floatingActionButton: Obx(() {
+            ),
+            floatingActionButton: Obx(
+              () {
                 return SpeedDial(
                   backgroundColor: primaryColor,
                   spacing: 15,
@@ -46,7 +46,8 @@ class MainView extends StatelessWidget {
                       backgroundColor: dangerColor,
                       label: "Uang Keluar",
                       child: const Icon(Icons.money_off_outlined),
-                      onTap: () {
+                      onTap: () async {
+                        await controller.clearInput();
                         showDialog(
                           context: context,
                           barrierDismissible: true,
@@ -59,12 +60,27 @@ class MainView extends StatelessWidget {
                       },
                     ),
                     SpeedDialChild(
-                        backgroundColor: successColor,
-                        label: "Uang Masuk",
-                        child: const Icon(Icons.monetization_on_outlined)),
+                      backgroundColor: successColor,
+                      label: "Uang Masuk",
+                      child: const Icon(Icons.monetization_on_outlined),
+                      onTap: () async {
+                        await controller.clearInput();
+                        showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            return const FormDialog(
+                              label: "Input Uang Masuk",
+                            );
+                          },
+                        );
+                      },
+                    ),
                   ],
                 );
-              })),
+              },
+            ),
+          ),
         );
       },
     );

@@ -1,5 +1,4 @@
 import 'package:keuanganku/core.dart';
-import 'package:keuanganku/shared/widgets/form/c_textbox.dart';
 
 class TxtLabel extends StatelessWidget {
   const TxtLabel({super.key});
@@ -8,7 +7,7 @@ class TxtLabel extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(MainController());
     return CTextbox(
-      label: "Label",
+      label: "Name",
       controller: controller.labelController,
     );
   }
