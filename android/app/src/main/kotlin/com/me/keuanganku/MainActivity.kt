@@ -1,4 +1,4 @@
-package com.example.keuanganku
+package com.me.keuanganku
 
 import io.flutter.embedding.android.FlutterActivity
 
